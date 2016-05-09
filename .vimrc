@@ -28,7 +28,9 @@ Plugin 'vim-scripts/accelerated-smooth-scroll' "Smooth Scroll
 
 Plugin 'vim-scripts/AutoComplPop'   " Autocompletado
 
-Plugin 'Lokaltog/powerline'         " Barra de Estado
+Plugin 'vim-airline/vim-airline'    " Barra de Estado
+
+Plugin 'vim-airline/vim-airline-themes' " Temas de la barra
 
 Plugin 'scrooloose/nerdcommenter'   " Administrar Comentarios
 
@@ -47,7 +49,6 @@ Plugin 'StanAngeloff/php.vim'       " PHP
 Plugin 'elzr/vim-json'              " JSON
 
 Plugin 'hdima/python-syntax'        " Python 
-
 
 " == Colorscheme ==
 Plugin 'sickill/vim-monokai'        " Monokai
@@ -83,7 +84,7 @@ Plugin 'altercation/vim-colors-solarized'   "Solarized
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
-filetype plugin indent on    " required
+filetype plugin on    " required
 " To ignore plugin indent changes, instead use:
 "filetype plugin on
 "
@@ -172,8 +173,16 @@ set t_Co=256        " Solo por si acaso, 256 colores en terminarl
 
 colorscheme jellybeans "Define el esquema de colores
 
+set laststatus=2 "La barra de estado siempre activa
+
 nmap <F8> :TagbarToggle<CR> 
 
-filetype plugin indent on
+filetype plugin indent off
+
+let g:airline_theme='base16_default'
+
+let g:airline_powerline_fonts = 1
+
+let g:airline#extensions#whitespace#enabled = 0
 
 syntax on
